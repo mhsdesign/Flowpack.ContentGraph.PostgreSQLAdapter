@@ -1,0 +1,6 @@
+Neos:
+  Flow:
+    error:
+      debugger:
+        ignoredClasses:
+          'Flowpack\\ContentGraph\\PostgreSQLAdapter.*': true
