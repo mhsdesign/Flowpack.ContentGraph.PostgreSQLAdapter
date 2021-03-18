@@ -1,0 +1,5 @@
+Neos:
+  EventSourcedContentRepository:
+    testing:
+      projectorsToBeReset:
+        'Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HypergraphProjector': true
