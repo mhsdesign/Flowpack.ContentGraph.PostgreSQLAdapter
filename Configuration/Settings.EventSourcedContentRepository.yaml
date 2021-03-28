@@ -3,3 +3,6 @@ Neos:
     testing:
       projectorsToBeReset:
         'Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HypergraphProjector': true
+    projection:
+      projectorsToBeBlocked:
+        'Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HypergraphProjector': true
