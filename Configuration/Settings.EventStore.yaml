@@ -4,4 +4,4 @@ Neos:
       stores:
         'ContentRepository':
           listeners:
-            'Flowpack\ContentGraph\PostgreSQLAdapter.*': true
+            'Flowpack\ContentGraph\PostgreSQLAdapter\.*': true
