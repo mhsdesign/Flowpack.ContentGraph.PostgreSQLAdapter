@@ -21,6 +21,7 @@ use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeDisabl
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeModification;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeReferencing;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeRemoval;
+use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeRenaming;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Infrastructure\DbalClient;
 use Neos\EventSourcedContentRepository\Infrastructure\Projection\AbstractProcessedEventsAwareProjector;
 use Neos\EventSourcedContentRepository\Service\Infrastructure\Service\DbalClient as EventStorageDbalClient;
@@ -33,12 +34,13 @@ use Neos\Flow\Annotations as Flow;
  */
 final class HypergraphProjector extends AbstractProcessedEventsAwareProjector
 {
+    use ContentStreamForking;
     use NodeCreation;
     use NodeDisabling;
+    use NodeModification;
     use NodeReferencing;
     use NodeRemoval;
-    use NodeModification;
-    use ContentStreamForking;
+    use NodeRenaming;
 
     private DbalClient $databaseClient;
 
