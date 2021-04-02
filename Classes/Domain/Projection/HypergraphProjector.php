@@ -15,6 +15,7 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection;
 
 use Doctrine\DBAL\Connection;
 use Neos\Cache\Frontend\VariableFrontend;
+use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\ContentStreamForking;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeCreation;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeDisabling;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeModification;
@@ -37,6 +38,7 @@ final class HypergraphProjector extends AbstractProcessedEventsAwareProjector
     use NodeReferencing;
     use NodeRemoval;
     use NodeModification;
+    use ContentStreamForking;
 
     private DbalClient $databaseClient;
 
