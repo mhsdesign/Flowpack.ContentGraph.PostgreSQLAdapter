@@ -23,6 +23,7 @@ use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeRefere
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeRemoval;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeRenaming;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeTypeChange;
+use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature\NodeVariation;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Infrastructure\DbalClient;
 use Neos\EventSourcedContentRepository\Infrastructure\Projection\AbstractProcessedEventsAwareProjector;
 use Neos\EventSourcedContentRepository\Service\Infrastructure\Service\DbalClient as EventStorageDbalClient;
@@ -40,6 +41,7 @@ final class HypergraphProjector extends AbstractProcessedEventsAwareProjector
     use NodeRemoval;
     use NodeRenaming;
     use NodeTypeChange;
+    use NodeVariation;
 
     private DbalClient $databaseClient;
 
