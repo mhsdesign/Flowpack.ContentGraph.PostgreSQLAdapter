@@ -16,7 +16,6 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter\Command;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\ContentHypergraph;
 use Neos\ContentRepository\Domain\ContentStream\ContentStreamIdentifier;
 use Neos\ContentRepository\Domain\NodeAggregate\NodeAggregateIdentifier;
-use Neos\EventSourcedContentRepository\Domain;
 use Neos\Flow\Cli\CommandController;
 
 final class HypergraphCommandController extends CommandController

@@ -16,7 +16,6 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\Query;
 use Doctrine\DBAL\Connection;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HierarchyHyperrelationRecord;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\NodeRecord;
-use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\RestrictionHyperrelationRecord;
 use Neos\ContentRepository\DimensionSpace\DimensionSpace\DimensionSpacePoint;
 use Neos\ContentRepository\DimensionSpace\DimensionSpace\DimensionSpacePointSet;
 use Neos\ContentRepository\Domain\ContentStream\ContentStreamIdentifier;
