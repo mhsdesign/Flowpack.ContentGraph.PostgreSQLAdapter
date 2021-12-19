@@ -1,8 +1,12 @@
-Neos:
-  EventSourcedContentRepository:
-    testing:
-      projectorsToBeReset:
-        'Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HypergraphProjector': true
-    projection:
-      defaultProjectorsToBeBlocked:
-        'Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HypergraphProjector': true
+# AS SOON AS POSTGRES IS FINISHED, RE-ENABLE THE BELOW CONFIG BY DEFAULT
+#Neos:
+#  EventSourcedContentRepository:
+#    unstableInternalWillChangeLater:
+#      testing:
+#        projectorsToBeReset:
+#          'Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HypergraphProjector': true
+#        activeContentGraphs:
+#          'Postgres': 'Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\ContentHypergraph'
+#      projection:
+#        defaultProjectorsToBeBlocked:
+#          'Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HypergraphProjector': true

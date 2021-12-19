@@ -18,7 +18,6 @@ use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\NodeRecord;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\NodeRelationAnchorPoint;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\ProjectionHypergraph;
 use Neos\ContentRepository\Domain\ContentStream\ContentStreamIdentifier;
-use Neos\Flow\Annotations as Flow;
 
 /**
  * The copy on write feature set for the hypergraph projector
