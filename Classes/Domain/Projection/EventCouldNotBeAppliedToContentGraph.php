@@ -12,7 +12,7 @@
 
 declare(strict_types=1);
 
-namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Exception;
+namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection;
 
 use Neos\Flow\Annotations as Flow;
 
