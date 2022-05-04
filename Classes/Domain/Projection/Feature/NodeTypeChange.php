@@ -16,7 +16,7 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature;
 use Doctrine\DBAL\Connection;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\NodeRecord;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\ProjectionHypergraph;
-use Neos\EventSourcedContentRepository\Domain\Context\NodeAggregate\Event\NodeAggregateTypeWasChanged;
+use Neos\ContentRepository\Feature\NodeTypeChange\Event\NodeAggregateTypeWasChanged;
 
 /**
  * The node disabling feature set for the hypergraph projector

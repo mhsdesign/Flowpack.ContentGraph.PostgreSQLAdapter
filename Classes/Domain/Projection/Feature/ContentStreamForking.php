@@ -16,7 +16,7 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature;
 use Doctrine\DBAL\Connection;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HierarchyHyperrelationRecord;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\RestrictionHyperrelationRecord;
-use Neos\EventSourcedContentRepository\Domain\Context\ContentStream\Event\ContentStreamWasForked;
+use Neos\ContentRepository\Feature\ContentStreamForking\Event\ContentStreamWasForked;
 
 /**
  * The content stream forking feature set for the hypergraph projector
