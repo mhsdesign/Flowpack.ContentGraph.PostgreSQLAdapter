@@ -1,6 +1,5 @@
 {
     "name": "flowpack/contentgraph-postgresqladapter",
-    "type": "neos-package",
     "description": "The PostgreSQL database backend for the Neos content graph",
     "license": "GPL-3.0+",
     "require": {
@@ -10,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Flowpack\\ContentGraph\\PostgreSQLAdapter\\": "Classes"
+            "Flowpack\\ContentGraph\\PostgreSQLAdapter\\": "src"
         }
     },
     "autoload-dev": {
