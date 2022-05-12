@@ -25,7 +25,7 @@ use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\Query\HypergraphRe
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\Query\HypergraphSiblingQuery;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\Query\HypergraphSiblingQueryMode;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\Query\QueryUtility;
-use Flowpack\ContentGraph\PostgreSQLAdapter\Infrastructure\DbalClient;
+use Flowpack\ContentGraph\PostgreSQLAdapter\Infrastructure\PostgresDbalClientInterface;
 use Neos\ContentRepository\DimensionSpace\DimensionSpace\DimensionSpacePoint;
 use Neos\ContentRepository\SharedModel\Workspace\ContentStreamIdentifier;
 use Neos\ContentRepository\SharedModel\Node\NodePath;
@@ -65,11 +65,11 @@ use Neos\Flow\Annotations as Flow;
 final class ContentSubhypergraph implements ContentSubgraphInterface
 {
     public function __construct(
-        private ContentStreamIdentifier $contentStreamIdentifier,
-        private DimensionSpacePoint $dimensionSpacePoint,
-        private VisibilityConstraints $visibilityConstraints,
-        private DbalClient $databaseClient,
-        private NodeFactory $nodeFactory
+        private readonly ContentStreamIdentifier $contentStreamIdentifier,
+        private readonly DimensionSpacePoint     $dimensionSpacePoint,
+        private readonly VisibilityConstraints   $visibilityConstraints,
+        private readonly PostgresDbalClientInterface      $databaseClient,
+        private readonly NodeFactory             $nodeFactory
     ) {
     }
 
