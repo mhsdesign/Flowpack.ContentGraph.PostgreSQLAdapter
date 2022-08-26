@@ -16,6 +16,9 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter\Infrastructure;
 
 use Doctrine\DBAL\Connection;
 
+/**
+ * @api
+ */
 interface PostgresDbalClientInterface
 {
     public function getConnection(): Connection;

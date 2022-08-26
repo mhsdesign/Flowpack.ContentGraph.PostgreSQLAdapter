@@ -5,6 +5,9 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\SchemaBuilde
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 
+/**
+ * @internal
+ */
 class JsonbType extends Type
 {
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform)

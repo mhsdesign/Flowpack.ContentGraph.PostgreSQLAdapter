@@ -18,6 +18,7 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection;
  * The node relation anchor points value object collection
  *
  * @implements \IteratorAggregate<int,NodeRelationAnchorPoint>
+ * @internal
  */
 final class NodeRelationAnchorPoints implements \IteratorAggregate, \Countable
 {
