@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\Query;
 
-
 /**
  * @internal
  */
