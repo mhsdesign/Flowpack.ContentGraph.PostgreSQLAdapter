@@ -19,7 +19,7 @@ use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\EventCouldNotBeApp
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\NodeRecord;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\ProjectionHypergraph;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\ReferenceRelationRecord;
-use Neos\ContentRepository\Feature\NodeReferencing\Event\NodeReferencesWereSet;
+use Neos\ContentRepository\Core\Feature\NodeReferencing\Event\NodeReferencesWereSet;
 
 /**
  * The node referencing feature set for the hypergraph projector
