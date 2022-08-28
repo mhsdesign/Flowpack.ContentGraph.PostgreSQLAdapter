@@ -26,7 +26,7 @@ use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\Query\HypergraphSi
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\Query\HypergraphSiblingQueryMode;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\Query\QueryUtility;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Infrastructure\PostgresDbalClientInterface;
-use Neos\ContentRepository\DimensionSpace\DimensionSpace\DimensionSpacePoint;
+use Neos\ContentRepository\DimensionSpace\DimensionSpacePoint;
 use Neos\ContentRepository\Projection\ContentGraph\References;
 use Neos\ContentRepository\SharedModel\NodeType\NodeTypeConstraintsWithSubNodeTypes;
 use Neos\ContentRepository\SharedModel\NodeType\NodeTypeManager;
