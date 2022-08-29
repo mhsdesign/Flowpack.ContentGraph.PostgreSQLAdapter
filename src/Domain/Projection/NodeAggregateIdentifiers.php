@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection;
 
-use Neos\ContentRepository\SharedModel\Node\NodeAggregateIdentifier;
-use Neos\ContentRepository\SharedModel\Node\NodeAggregateIdentifiers
+use Neos\ContentRepository\Core\SharedModel\Node\NodeAggregateIdentifier;
+use Neos\ContentRepository\Core\SharedModel\Node\NodeAggregateIdentifiers
     as NodeAggregateIdentifierCollection;
 
 /**
