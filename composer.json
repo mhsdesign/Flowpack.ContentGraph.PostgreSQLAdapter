@@ -9,7 +9,7 @@
     },
     "license": "GPL-3.0+",
     "require": {
-        "neos/contentrepository-core": "*",
+        "neos/contentrepository-core": "~9.0",
         "doctrine/dbal": "*",
         "doctrine/migrations": "*"
     },
