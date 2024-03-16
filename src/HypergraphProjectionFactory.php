@@ -7,9 +7,9 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HypergraphProjection;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\NodeFactory;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Infrastructure\PostgresDbalClientInterface;
-use Neos\ContentRepository\Core\SharedModel\ContentRepository\ContentRepositoryId;
 use Neos\ContentRepository\Core\Factory\ProjectionFactoryDependencies;
 use Neos\ContentRepository\Core\Projection\ProjectionFactoryInterface;
+use Neos\ContentRepository\Core\SharedModel\ContentRepository\ContentRepositoryId;
 
 /**
  * @implements ProjectionFactoryInterface<HypergraphProjection>
