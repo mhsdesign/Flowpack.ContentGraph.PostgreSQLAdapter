@@ -7,6 +7,7 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\HypergraphProjection;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\NodeFactory;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Infrastructure\PostgresDbalClientInterface;
+use Neos\ContentRepository\Core\ContentGraphFinder;
 use Neos\ContentRepository\Core\Factory\ProjectionFactoryDependencies;
 use Neos\ContentRepository\Core\Projection\ProjectionFactoryInterface;
 use Neos\ContentRepository\Core\SharedModel\ContentRepository\ContentRepositoryId;
@@ -36,16 +37,16 @@ final class HypergraphProjectionFactory implements ProjectionFactoryInterface
             $projectionFactoryDependencies->contentRepositoryId
         );
 
-        return new HypergraphProjection(
-            $this->dbalClient,
-            new NodeFactory(
-                $projectionFactoryDependencies->contentRepositoryId,
-                $projectionFactoryDependencies->nodeTypeManager,
-                $projectionFactoryDependencies->propertyConverter
-            ),
+        $nodeFactory = new NodeFactory(
             $projectionFactoryDependencies->contentRepositoryId,
             $projectionFactoryDependencies->nodeTypeManager,
-            $tableNamePrefix
+            $projectionFactoryDependencies->propertyConverter
+        );
+
+        return new HypergraphProjection(
+            $this->dbalClient,
+            $tableNamePrefix,
+            new ContentGraphFinder(new ContentHyperGraphFactory($this->dbalClient, $nodeFactory, $projectionFactoryDependencies->contentRepositoryId, $projectionFactoryDependencies->nodeTypeManager, $tableNamePrefix))
         );
     }
 }
