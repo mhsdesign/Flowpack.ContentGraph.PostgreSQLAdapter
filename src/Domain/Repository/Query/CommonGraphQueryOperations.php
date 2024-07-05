@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Repository\Query;
 
 use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\ForwardCompatibility\Result as QueryResult;
+use Doctrine\DBAL\Result as QueryResult;
 use Neos\ContentRepository\Core\Projection\ContentGraph\Filter\NodeType\ExpandedNodeTypeCriteria;
 
 /**
