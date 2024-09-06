@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowpack\ContentGraph\PostgreSQLAdapter;
 
 use Doctrine\DBAL\Connection;
