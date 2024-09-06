@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\SchemaBuilder;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
