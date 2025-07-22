@@ -15,9 +15,11 @@ declare(strict_types=1);
 namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\Feature;
 
 use Doctrine\DBAL\Connection;
+use Flowpack\ContentGraph\PostgreSQLAdapter\ContentGraphTableNames;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\EventCouldNotBeAppliedToContentGraph;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\NodeRecord;
-use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\ProjectionHypergraph;
+use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\ProjectionReadQueries;
+use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\ProjectionWriteQueries;
 use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\ReferenceRelationRecord;
 use Neos\ContentRepository\Core\Feature\NodeReferencing\Event\NodeReferencesWereSet;
 
@@ -36,7 +38,7 @@ trait NodeReferencing
     private function whenNodeReferencesWereSet(NodeReferencesWereSet $event): void
     {
         foreach ($event->affectedSourceOriginDimensionSpacePoints as $originDimensionSpacePoint) {
-            $nodeRecord = $this->getProjectionHypergraph()->findNodeRecordByOrigin(
+            $nodeRecord = $this->getReadQueries()->findNodeRecordByOrigin(
                 $event->contentStreamId,
                 $originDimensionSpacePoint,
                 $event->nodeAggregateId
@@ -51,9 +53,10 @@ trait NodeReferencing
                 );
 
                 $position = 0;
+                // FIXME can't we get rid of the loop and turn this into a single query?
                 foreach ($event->references as $referencesForProperty) {
                     // TODO can't we turn this into two atomic queries?
-                    $this->getDatabaseConnection()->delete($this->tableNamePrefix . '_referencerelation', [
+                    $this->getDatabaseConnection()->delete($this->tableNames->referenceRelation(), [
                         'sourcenodeanchor' => $anchorPoint->value,
                         'name' => $referencesForProperty->referenceName->value
                     ]);
@@ -67,7 +70,7 @@ trait NodeReferencing
                             $reference->properties,
                             $reference->targetNodeAggregateId
                         );
-                        $referenceRecord->addToDatabase($this->getDatabaseConnection(), $this->tableNamePrefix);
+                        $this->getWriteQueries()->addReferenceToDatabase($this->getDatabaseConnection(), $referenceRecord);
                         $position++;
                     }
                 }
@@ -77,7 +80,10 @@ trait NodeReferencing
         }
     }
 
-    abstract protected function getProjectionHypergraph(): ProjectionHypergraph;
+    abstract protected function getReadQueries(): ProjectionReadQueries;
+    abstract protected function getWriteQueries(): ProjectionWriteQueries;
 
     abstract protected function getDatabaseConnection(): Connection;
+
+    abstract protected function getTableNames(): ContentGraphTableNames;
 }
