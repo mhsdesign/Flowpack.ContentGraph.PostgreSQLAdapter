@@ -6,11 +6,13 @@ namespace Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\SchemaBuilde
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\PostgresTypes\AbstractArrayType;
+use Doctrine\DBAL\Types\ArrayType;
+use Doctrine\DBAL\Types\JsonType;
 
 /**
  * @internal
  */
-class BigintArrayType extends AbstractArrayType
+class BigintArrayType extends JsonType
 {
     /**
      * @return string
