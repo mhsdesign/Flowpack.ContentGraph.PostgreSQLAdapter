@@ -19,7 +19,6 @@ use Flowpack\ContentGraph\PostgreSQLAdapter\Domain\Projection\PostgresContentGra
  */
 final readonly class HypergraphSchemaBuilder
 {
-
     public function __construct(
         private ContentGraphTableNames $tableNames
     ) {
