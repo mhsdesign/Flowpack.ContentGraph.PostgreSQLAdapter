@@ -22,8 +22,10 @@ jobs:
           - php-version: "8.2"
             neos-version: "9.1"
 
-          - php-version: "8.3"
+          - php-version: "8.2"
             neos-version: "9.1"
+            # comment in this line to use a specific branch of the neos dev collection
+            neos-dev-collection-branch: "bugfix/postgres-compatibility-except-graph"
 
           - php-version: "8.2"
             neos-version: "9.1"
@@ -104,7 +106,7 @@ jobs:
           rm -f Configuration/Testing/Settings.yaml
           
           # unset the Neos.Neos default in the upper context 
-          ${{ matrix.include-neos-neos-content-repository-preset || '
+          ${{ matrix.include-neos-neos-content-repository-preset && '' || '
           cat <<EOF >> Configuration/Settings.yaml
           Neos:
             ContentRepositoryRegistry:
@@ -131,7 +133,7 @@ jobs:
               presets:
                 default:
                   # if Neos.Neos preset is not used setup missing defaults in lower context, otherwise null
-          ${{ matrix.include-neos-neos-content-repository-preset || '
+          ${{ matrix.include-neos-neos-content-repository-preset && '' || '
                   eventStore:
                     factoryObjectName: Neos\ContentRepositoryRegistry\Factory\EventStore\DoctrineEventStoreFactory
                   subscriptionStore:
